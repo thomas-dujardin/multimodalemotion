@@ -24,4 +24,4 @@ The "utils" folder contains a function :
 
 - pipeline_annotation_emotions.py, which takes a short video as input (an "utterance" as defined in the M2FNet paper), and returns the same video captioned with the predominant emotion.
 
-Due to the short duration of the internship, the performances are not great (~35% accuracy). This might be explained by some approximations and errors in my implementation.
+Due to the short duration of the internship, and due to the fact that I am still learning PyTorch, the performances are not great (~35% accuracy). This might be explained by some approximations and errors in my implementation.

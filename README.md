@@ -1,15 +1,17 @@
 # multimodalemotion
 
-Implémentation du modèle "M2FNet" [https://arxiv.org/abs/2206.02187] sur Python avec le framework PyTorch.
+Implementation of a model inspired by the "M2FNet" model [https://arxiv.org/abs/2206.02187] on Python using PyTorch.
 
-Le modèle est entraîné avec un LR constant de 3e-4 sur 5 epochs, avec des batchs de taille 32, et sur huit labels (neutralneutral, angernegative, disgustnegative, fearnegative, joypositive, sadnessnegative, surprisenegative, surprisepositive).
+The training, validation and testing data used come from the MELD dataset [https://affective-meld.github.io/]
 
-main_emotions.py, le fichier à exécuter, effectue la featurisation des différentes modalités (~20 h de temps de calcul avec le mésocentre des élèves de Centrale), puis l'entraînement du modèle. Il suffit simplement de modifier la ligne 48 du code, pour y indiquer le bon chemin d'accès vers le dossier contenant le dataset. Ce dossier doit être composé de trois sous-dossiers "train", "dev" et "test".
+The model is trained with a constant LR of 3e-4 on 5 epochs, with a batch size of 32, and on eight labels (neutralneutral, angernegative, disgustnegative, fearnegative, joypositive, sadnessnegative, surprisenegative, surprisepositive).
+
+main_emotions.py, the file to be executed, performs the featurization of the different modalities (~20h of computation time using the computation center of CentraleSupelec which specs can be found here: https://mesocentre.pages.centralesupelec.fr/user_doc/ruche/01_cluster_overview/), then the training of the model (~1h of computation). It is enough to modify line 48 of the code, to indicate the correct access path to the folder containing the dataset. This dataset folder must be composed of three subfolders "train", "dev" and "test".
  
-Le code est organisé de la manière suivante :
+The code is organized as follows:
 
 ![image](https://user-images.githubusercontent.com/93575161/193032629-aa6ad92b-0dce-40c3-b264-ac32268cd6d4.png)
 
-Le dossier "utils" contient deux fonctions :
-- cleaner.py, qui permet de supprimer les phrases en trop dans le .csv (les fichiers .csv contiennent les dialogues de tous les extraits vidéos de MELD, il est donc nécessaire d'en supprimer certaines entrées si l'on veut entraîner le modèle sur une portion du dataset) ;
-- pipeline_annotation_emotions.py, qui prend en entrée une vidéo, et qui retourne cette même vidéo captionnée avec l'émotion prédominante.
+The "utils" folder contains a function :
+
+- pipeline_annotation_emotions.py, which takes a short video as input (an "utterance" as defined in the M2FNet paper), and returns the same video captioned with the predominant emotion.

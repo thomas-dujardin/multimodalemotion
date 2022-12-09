@@ -1,0 +1,15 @@
+asposestorage==1.0.2
+feat==1.0.5
+moviepy==1.0.3
+natsort==8.2.0
+numpy==1.23.3
+pandas==1.4.4
+Pillow==9.3.0
+scikit_learn==1.2.0
+scipy==1.9.3
+skimage==0.0
+torch==1.13.0
+torchaudio==0.13.0
+tqdm==4.64.1
+transformers==4.21.3
+

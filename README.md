@@ -2,6 +2,8 @@
 
 An attempt at implementing a model inspired by "M2FNet" [https://arxiv.org/abs/2206.02187] using PyTorch.
 
+A detailed report (in French) and summaries in French and English can be found in the "reports_summaries" folder.
+
 The training, validation and testing data come from the MELD dataset [https://affective-meld.github.io/]
 
 The model is trained with a constant LR of 3e-4 on 5 epochs, with a batch size of 32, and on eight labels (neutralneutral, angernegative, disgustnegative, fearnegative, joypositive, sadnessnegative, surprisenegative, surprisepositive).
@@ -22,4 +24,4 @@ The "utils" folder contains a function :
 
 - pipeline_annotation_emotions.py, which takes a short video as input (an "utterance" as defined in the M2FNet paper), and returns the same video captioned with the predominant emotion.
 
-Due to the short duration of the internship, the performances are not great (~35% accuracy). This might be explained by some approximations and errors in my implementation.
+Due to the short duration of the internship, and due to the fact that I am still learning PyTorch, the performances are not great (~35% accuracy). This might be explained by some approximations and errors in my implementation.
